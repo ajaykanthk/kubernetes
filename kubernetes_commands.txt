@@ -1,0 +1,6 @@
+kubectl get nodes -- list of all nodes
+kubectl run web --image docker.io/tomcat -- will create a pod
+kubectl get pods -- list of all pods
+kubectl describe pod web -- describes about pod
+kubectl apply -f xyz.yml
+kubectl get rs
