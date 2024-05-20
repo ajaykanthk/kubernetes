@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: ReplicaSet
 metadata:
-  name: Ajay
+  name: ajay
   labels:
     app: guestbook
     tier: frontend

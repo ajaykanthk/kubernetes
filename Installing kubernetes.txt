@@ -1,0 +1,23 @@
+===================================================================
+##To install Kubectl
+curl -LO "https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl"
+sudo mv ./kubectl /usr/local/bin/kubectl
+chmod 700 /usr/local/bin/kubectl
+kubectl version
+
+##Download eksctl - Cmd line tool to work with eks cluster
+curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
+sudo mv /tmp/eksctl /usr/local/bin
+sudo chmod 700 /usr/local/bin/eksctl
+eksctl version
+
+##to create cluster 
+eksctl create cluster --name test  \
+--region us-east-2 \
+--node-type t2.micro \
+--nodes-min 2 \
+--nodes-max 2 \ 
+--zones us-east-2a,us-east-2b
+
+##to delete the cluster
+eksctl delete cluster test --region us-east-2
